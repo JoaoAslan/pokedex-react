@@ -1,4 +1,4 @@
-import {type PokemonSummary} from '../types/Pokemon.ts';
+import type { PokemonSummary, PokemonDetailed} from '../types/Pokemon.ts';
 
 export function toPokemonSummary(pokeData: any): PokemonSummary {
     const typesNames = pokeData.types.map((t: any) => t.type.name);

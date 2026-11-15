@@ -1,5 +1,3 @@
-import type { Evolution} from './Evolution.ts';
-
 export type PokemonDetailed = PokemonSummary & {
     generation: string;
     species: {
@@ -17,7 +15,7 @@ export type PokemonDetailed = PokemonSummary & {
         abilities: string[];
         gender: number; //  being female (in eighths; or -1 for genderless)
         capture_rate: number;
-        strenghts: string[];
+        strengths: string[];
         weakness: string[];
     };
     base_stats: {
@@ -38,4 +36,10 @@ export type PokemonSummary = {
         front_default: string;
     };
     types: string[];
+}
+
+export type Evolution = {
+    id: number,
+    name: string,
+    trigger: string
 }

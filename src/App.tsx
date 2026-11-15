@@ -1,10 +1,8 @@
 import './styles/global.css'
-import {useFetchPokemonByID} from './hooks/useFetchPokemon.js';
+import {usePokedex} from './hooks/usePokedex.ts';
 
 function App() {
-  const result = useFetchPokemonByID(1);
-  console.log(result.loading)
-
+  usePokedex();
   return (
     <>
       <h1>Hello World!</h1>
