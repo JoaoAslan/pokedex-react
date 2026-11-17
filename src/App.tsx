@@ -34,7 +34,7 @@ function App() {
   }, []);
 
   const pokemonsVisible = pokemons.filter((p) => {
-    return p.name.includes(searchTerm) || p.id.toString().includes(searchTerm);
+    return p.name.toLowerCase().includes(searchTerm.toLowerCase()) || p.id.toString().includes(searchTerm);
   });
 
   const handleFilter = (term: string) => {

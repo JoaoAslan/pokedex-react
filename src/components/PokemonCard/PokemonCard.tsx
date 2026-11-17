@@ -77,7 +77,7 @@ function PokemonCard({
     const idFormat = '#'+id.toString().padStart(2, '0');
     const nameFormat = formatString(name);
 
-    const [ corPrimaria, corSecundaria ] = types.map((t) => TYPE_COLORS[t]);
+    const [ corPrimaria, corSecundaria ] = types.map((t) => TYPE_COLORS[t] ?? TYPE_COLORS.default);
     
     // Mesclamos as variáveis CSS de cor com a rotação dinâmica do 3D
     const cardStyle = {

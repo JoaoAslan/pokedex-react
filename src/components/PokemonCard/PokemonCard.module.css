@@ -16,6 +16,11 @@
 
     overflow: hidden; 
     position: relative;
+
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .pokemon-card-box::before {
@@ -25,7 +30,7 @@
     bottom: -40px;
     width: 220px;
     height: 220px;
-    background-image: url(../../../public/pokeicon.svg);
+    background-image: url(/pokeicon.svg);
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.18;
