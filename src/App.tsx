@@ -21,6 +21,7 @@ export async function getPokemon(identifier: number|string): Promise<any> {
 
 function App() {
   const [pokemons, setPokemons] = useState<any[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>('');
   
   useEffect(() => {
     const carregarPokemons = async () => {
@@ -31,16 +32,28 @@ function App() {
     }
     carregarPokemons();
   }, []);
-  
-  console.log(pokemons);
 
+  const pokemonsVisible = pokemons.filter((p) => {
+    return p.name.includes(searchTerm) || p.id.toString().includes(searchTerm);
+  });
+
+  const handleFilter = (term: string) => {
+    setSearchTerm(term);
+  }
+  
   return (
     <>
-      <Header/>
+      <Header searchTerm={searchTerm} setSearchTerm={handleFilter}/>
       <PokemonList>
-        {pokemons && pokemons.map((p) =>
+        {pokemons && pokemonsVisible.map((p) =>
           (
-          <PokemonCard id={p.id} name={p.name} types={p.types.map((t:any)=> t.type.name)} sprite={p.sprites.other['official-artwork'].front_default}/>
+          <PokemonCard
+            key={p.id}
+            id={p.id}
+            name={p.name}
+            types={p.types.map((t:any)=> t.type.name)}
+            sprite={p.sprites.other['official-artwork'].front_default}
+          />
         ))
         }
       </PokemonList>
