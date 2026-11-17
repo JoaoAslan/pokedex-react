@@ -1,0 +1,11 @@
+.header-div {
+    display: flex;
+    flex-direction: column;
+    padding: 55px 0px 0px 50px;
+}
+
+@media screen and (min-width: 1700px) {
+    .header-div {
+        align-items: center;
+    }
+}

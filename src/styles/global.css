@@ -2,10 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+   user-select: none;
 }
 
 body {
-    min-height: 100vh;
+  font-family: 'Inter', 'Times New Roman', Times, serif;
+  min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
 }

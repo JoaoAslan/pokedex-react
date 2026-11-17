@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
-import './styles/global.css'
+import './styles/global.css';
+import Header from './components/Header/Header';
+import PokemonList from './components/PokemonList/PokemonList';
+import PokemonCard from './components/PokemonCard/PokemonCard';
 
 export async function getPokemon(identifier: number|string): Promise<any> {
     try {
@@ -29,11 +32,18 @@ function App() {
     carregarPokemons();
   }, []);
   
+  console.log(pokemons);
+
   return (
     <>
-      {pokemons && pokemons.map((p) => (
-        <h1>{p.id} - {p.name}</h1>
-      ))}
+      <Header/>
+      <PokemonList>
+        {pokemons && pokemons.map((p) =>
+          (
+          <PokemonCard id={p.id} name={p.name} types={p.types.map((t:any)=> t.type.name)} sprite={p.sprites.other['official-artwork'].front_default}/>
+        ))
+        }
+      </PokemonList>
     </>
   )
 }
