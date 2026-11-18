@@ -1,0 +1,31 @@
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 40px;
+}
+
+.load-more-btn {
+  background-color: #E9E9E9;
+  color: #555555;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.load-more-btn:hover:not(:disabled) {
+  background-color: #DCDCDC;
+}
+
+.load-more-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.load-more-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
